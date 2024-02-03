@@ -7,7 +7,6 @@ The inspiration came from copying/pasting the IP address list on OSCP challenges
 There are certainly plenty of regex examples on the internet for IP addresses. Unfortunately, most of them capture *anything* within the 0.0.0.0-255.255.255.255 range. That approach might be good enough for most users, but not *this* user, damn it!
 
 ## Extracted IP ranges
----
 The default regex captures the following ranges:
 - **0.0.0.0/8** (*"This network"*)
 - **10.0.0.0/8** (*Private-Use*)
@@ -20,12 +19,10 @@ The default regex captures the following ranges:
 There is also a regex to capture **all** IPv4 addresses on the [IANA IPv4 Special-Purpose Address Registry](https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml), including dummy and reserved addresses.
 
 ## Requirements
----
 - Python3
 - That's it, really
 
 ## Usage
----
 ```bash
 extract-ip raw.txt
 
@@ -49,7 +46,6 @@ extract-ip raw.txt -i [--iana]
 ```
 
 ## Just here for the regex?
----
 ```python
 DEFAULT_REGEX = r"(^|(?<=[^0-9]))172\.(1[6-9]|2[0-9]|3[0-1])(\.(0|2[0-4][0-9]|25[0-5]|1?[0-9]?[0-9])){2}|(169\.254|192\.168)(\.(0|2[0-4][0-9]|25[0-5]|1?[0-9]?[0-9])){2}|(0|10|127)(\.(0|2[0-4][0-9]|25[0-5]|1?[0-9]?[0-9])){3}($|(?![0-9]))"
 
