@@ -69,7 +69,7 @@ args = parser.parse_args()
 raw_file = args.filename
 out_path = args.output
 delimiter = args.delimiter
-default = not(args.all)
+default = not(args.iana)
 not_quiet = not(args.quiet)
 write_file = not(args.no_file)
 
